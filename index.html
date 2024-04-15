@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Défi</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/app.css">
+        <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/x-icon">
+
+    </head>
+    <body class="xl:px-60 lg:px-44 md:px-14 relative">
+        <div id="modal"
+            class="fixed hidden top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center"
+            style="background-color: rgba(0, 0, 0, 0.818);">
+            <div class="w-1/3 relative " style="min-width: 400px;">
+                <svg class="absolute  cursor-pointer" id="close"
+                    style="top: -30px; right: -30px;" width="14" height="15"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                        fill="#FFA500" fill-rule="evenodd" />
+                </svg>
+                <div style="top: 50%; right:-20px;" id="next"
+                    class="absolute rounded-full p-2 bg-white cursor-pointer">
+                    <svg
+                        width="13" height="18"
+                        xmlns="http://www.w3.org/2000/svg"><path
+                            d="m2 1 8 8-8 8"
+                            stroke="#1D2026" stroke-width="3" fill="none"
+                            fill-rule="evenodd" /></svg>
+                </div>
+                <div style="top: 50%; left:-20px;" id="previous"
+                    class="absolute rounded-full p-2 bg-white cursor-pointer">
+                    <svg width="12" height="18"
+                        xmlns="http://www.w3.org/2000/svg"><path
+                            d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3"
+                            fill="none" fill-rule="evenodd" /></svg>
+                </div>
+                <div  class="absolute flex items-center justify-between" style="left: 20px; right: 20px; bottom: -100px;">
+                    <div class="w-20 h-20 relative modal-image-thumbnail">
+                        <img class="rounded-lg"
+                            src="./assets/images/image-product-1-thumbnail.jpg"
+                            alt>
+                        <div class="rounded-lg small-image"></div>
+                    </div>
+                    <div class="w-20 h-20 relative modal-image-thumbnail">
+                        <img class="rounded-lg"
+                            src="./assets/images/image-product-2-thumbnail.jpg"
+                            alt>
+                        <div class="rounded-lg small-image"></div>
+                    </div>
+                    <div class="w-20 h-20 relative modal-image-thumbnail">
+                        <img class="rounded-lg"
+                            src="./assets/images/image-product-3-thumbnail.jpg"
+                            alt>
+                        <div class="rounded-lg small-image"></div>
+                    </div>
+                    <div class="w-20 h-20 relative modal-image-thumbnail">
+                        <img class="rounded-lg"
+                            src="./assets/images/image-product-4-thumbnail.jpg"
+                            alt>
+                        <div class="rounded-lg small-image"></div>
+                    </div>
+                </div>
+                <img id="modaleImage" class="rounded-lg"
+                    src="./assets/images/image-product-1.jpg"
+                    style alt>
+            </div>
+        </div>
+        <header class="relative">
+            <nav class="flex items-center justify-between pt-7 pb-6 relative">
+                <div class="flex items-center gap-16">
+                    <h1 class="text-2xl kumbh-sans-bold">sneakers</h1>
+                    <ul
+                        class="flex cursor-pointer gap-6 text-gray-600 kumbh-sans-regular">
+                        <li class="hover:text-gray-800">Collection</li>
+                        <li class="hover:text-gray-800">Men</li>
+                        <li class="hover:text-gray-800">Women</li>
+                        <li class="hover:text-gray-800">About</li>
+                        <li class="hover:text-gray-800">Contact</li>
+                    </ul>
+                </div>
+                <div class="basket flex items-center gap-12 pt-6">
+                    <img class="cursor-pointer" id="cart"
+                        src="./assets/images/icon-cart.svg" alt>
+                    <div
+                        class="rounded-full w-12 h-12 hover:bg-orange-500 cursor-pointer"
+                        style="padding: 2px;">
+                        <img src="./assets/images/image-avatar.png" alt>
+                    </div>
+                </div>
+            </nav>
+            <div class="bg-gray-300 w-full" style="height: 1.2px;"></div>
+            <div id="cart-component"
+                class="hidden w-1/4 absolute top-20 right-0 shadow-xl rounded-lg bg-white py-2">
+                <div class="p-2">
+                    <h1 class="text-gray-600">Cart</h1>
+                </div>
+                <div class="bg-gray-300 w-full" style="height: 1px;"></div>
+                <div class="flex items-center justify-center h-40">
+                    Your cart is empty
+                </div>
+            </div>
+        </header>
+        <main class="flex w-full mt-20">
+            <section class="w-1/2">
+                <div class="flex flex-col mx-14">
+                    <div class="mb-6">
+                        <img class="rounded-lg" id="imageCard"
+                            src="/assets/images/image-product-1.jpg"
+                            width="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="w-20 h-20 relative image-thumbnail">
+                            <img class="rounded-lg"
+                                src="./assets/images/image-product-1-thumbnail.jpg"
+                                alt>
+                            <div class="rounded-lg small-image"></div>
+                        </div>
+                        <div class="w-20 h-20 relative image-thumbnail">
+                            <img class="rounded-lg"
+                                src="./assets/images/image-product-2-thumbnail.jpg"
+                                alt>
+                            <div class="rounded-lg small-image"></div>
+                        </div>
+                        <div class="w-20 h-20 relative image-thumbnail">
+                            <img class="rounded-lg"
+                                src="./assets/images/image-product-3-thumbnail.jpg"
+                                alt>
+                            <div class="rounded-lg small-image"></div>
+                        </div>
+                        <div class="w-20 h-20 relative image-thumbnail">
+                            <img class="rounded-lg"
+                                src="./assets/images/image-product-4-thumbnail.jpg"
+                                alt>
+                            <div class="rounded-lg small-image"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section></section>
+        </main>
+        <script src="./assets/js/app.js"></script>
+    </body>
+</html>
